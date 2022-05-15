@@ -1,0 +1,59 @@
+﻿@using WebApplicationExam2.Models.Entity
+@model Product
+<h1 class="mb-5">ویرایش محصول</h1>
+
+<form class="">
+    <div>
+      <label asp-for="ID" class="col-sm-2 col-form-label"></label>   
+      <input type="text" class="form-control"  asp-for="ID" disabled>
+    </div>
+
+    <div>       
+     <label asp-for="Name" class="col-sm-2 col-form-label"></label>  
+     <input type="text" class="form-control"  asp-for="Name">
+    </div>
+
+    <div>
+      <label asp-for="Price" class="col-sm-2 col-form-label"></label>  
+      <input type="text" class="form-control" asp-for="Price" >
+    </div>
+
+    <div>
+      <label asp-for="Count" class="col-sm-2 col-form-label"></label>
+      <input type="text" class="form-control" asp-for="Count" >
+    </div>
+
+
+     <div>
+      <label asp-for="generateDate" class="col-sm-2 col-form-label"></label>
+      <input type="text" class="form-control" asp-for="generateDate">
+    </div>
+
+    
+    <div>
+         <select asp-for="categoryID" class="form-select form-select-sm" aria-label=".form-select-sm example">
+            <option selected >نوع کالا</option>
+            <option value="1">دیجیتال</option>
+            <option value="2">خانگی</option>
+            <option value="3">صوتی</option>
+            <option value="4">خودرو</option>
+        </select>
+    </div>
+        <div style="padding:25px">
+        <select asp-for="userID" class="form-select form-select-sm" aria-label=".form-select-sm example">
+            <option selected>نام کاربر</option>
+            <option value="1">کاربر1</option>
+            <option value="2">کاربر2</option>
+            <option value="3">کاربر3</option>
+            <option value="5">کاربر4</option>
+        </select>
+    </div>
+  
+ 
+   
+    <div>   
+        <input type="submit" class="btn btn-success" asp-controller="Shop" asp-action="Edit" formmethod="post" value="ثبت"/>   
+        <a class="btn btn-primary" asp-area="" asp-controller="shop"asp-action="index">بازگشت به لیست</a>
+    </div>
+    
+</form>

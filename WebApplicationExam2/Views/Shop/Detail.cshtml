@@ -1,0 +1,48 @@
+﻿@using WebApplicationExam2.Models.Entity
+@model Product
+<h1 class="mb-5">مشاهده محصول   </h1>
+
+<form class="">
+    <div>
+      <label asp-for="ID" class="col-sm-2 col-form-label"></label>   
+      <input type="text" class="form-control"  asp-for="ID" disabled>
+    </div>
+
+    <div>       
+     <label asp-for="Name" class="col-sm-2 col-form-label"></label>  
+     <input type="text" class="form-control"  asp-for="Name" readonly="readonly">
+    </div>
+
+    <div>
+      <label asp-for="Price" class="col-sm-2 col-form-label"></label>  
+      <input type="text" class="form-control" asp-for="Price" readonly="readonly">
+    </div>
+
+    <div>
+      <label asp-for="Count" class="col-sm-2 col-form-label"></label>
+      <input type="text" class="form-control" asp-for="Count" readonly="readonly">
+    </div>
+
+
+     <div>
+      <label asp-for="generateDate" class="col-sm-2 col-form-label"></label>
+      <input type="text" class="form-control" asp-for="generateDate" readonly="readonly">
+    </div>
+
+    
+    <div>
+         <select asp-for="categoryID" class="form-select form-select-sm" aria-label=".form-select-sm example" disabled="true">
+            <option selected >نوع کالا</option>
+            <option value="1">دیجیتال</option>
+            <option value="2">خانگی</option>
+            <option value="3">صوتی</option>
+            <option value="4">خودرو</option>
+        </select>
+    </div>
+ 
+   
+    <div>   
+        <a class="btn btn-primary" asp-area="" asp-controller="shop"asp-action="index">بازگشت به لیست</a>
+    </div>
+    
+</form>

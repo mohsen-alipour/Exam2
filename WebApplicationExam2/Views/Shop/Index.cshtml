@@ -1,0 +1,31 @@
+﻿@using WebApplicationExam2.Models.QueryModel
+@model List<ProductWithCategoryQueryModel>
+<a class="btn btn-dark"asp-area=""asp-controller="Shop"asp-action="Add">ایجاد</a>
+<table class="table table-hover bg-danger">
+     <tr>
+        <th>شناسه محصول</th>
+        <th>نام محصول</th>
+         <th>قیمت</th>
+        <th>تعداد موجودی</th>
+        <th>تاریخ تولید</th>
+        <th>نوع محصول</th>
+        <th>عملیات</th>
+    </tr>
+ 
+    @foreach(var item in Model)
+{       
+    <tr>
+        <th>@item.IDP</th>
+        <th>@item.NameP</th>
+        <th>@item.PriceP</th>
+        <th>@item.CountP</th>
+        <th>@item.generateDateP</th>
+         <th>@item.categorytitleC</th>
+        <th>
+           <a class="btn btn-info" asp-area="" asp-controller="shop"asp-action="Detail"asp-route-id="@item.IDP" >مشاهده</a>
+            <a class="btn btn-warning" asp-area=""asp-controller="Shop"asp-action="Edit"asp-route-id="@item.IDP">ویرایش</a>
+            <a class="btn btn-dark"asp-area=""asp-controller="shop"asp-action="Delete"asp-route-id="@item.IDP">حذف</a>
+        </th>
+    </tr>
+}
+</table>
